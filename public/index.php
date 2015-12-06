@@ -2,7 +2,8 @@
 
 use Hakkit\Core\Http\Request;
 
-require_once APP_FOLDER . '/vendor/autoload.php';
+define('APP_ROOT', realpath(__DIR__ . '/../'));
+require_once APP_ROOT . '/vendor/autoload.php';
 
 function main() : void {
 	$request = Request::constructFromGlobals();
