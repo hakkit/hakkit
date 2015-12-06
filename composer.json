@@ -1,0 +1,8 @@
+{
+	"autoload": {
+        "psr-4": {
+        	"Hakkit\\Core\\": "core/",
+        	"App\\": "appl/"
+        }
+    }
+}
