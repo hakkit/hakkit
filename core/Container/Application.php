@@ -10,7 +10,7 @@ final class Application
 {
 	private Router $router;
 	
-	public function __construct(Router $router) 
+	public function __construct(Router $router) : void
 	{
 		$this->router = $router;
 	}
