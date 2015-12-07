@@ -17,11 +17,7 @@ final class Application
 	
 	public function handle(Request $request) : mixed 
 	{
-		$response = new Response(
-			$this->passRequestToRouter($request)
-		);
-
-		return $response->getData();
+		return new Response('Welcome!');
 	}
 	
 	public function getRouter() : Router 
