@@ -24,7 +24,7 @@ class Request
  		$this->server = $server;
  	}
 
-	public static function constructFromGlobals() : Request
+	public static function constructFromGlobals() : Request 
 	{
 		return new self(
 			new Map($_POST),
@@ -35,23 +35,28 @@ class Request
 		);
 	}
 
-	public function request(string $key) : mixed {
+	public function request(string $key) : mixed 
+	{
 		return $this->request->get($key);
 	}
 
-	public function post(string $key) : mixed {
-		return $this->post->get($key);
+	public function query(string $key) : mixed 
+	{
+		return $this->query->get($key);
 	}
 
-	public function files(string $key) : mixed {
+	public function files(string $key) : mixed 
+	{
 		return $this->files->get($key);
 	}
 
-	public function cookies(string $key) : mixed {
+	public function cookies(string $key) : mixed 
+	{
 		return $this->cookies->get($key);
 	}
 
-	public function server(string $key) : mixed {
+	public function server(string $key) : mixed 
+	{
 		return $this->server->get($key);
 	}
 
