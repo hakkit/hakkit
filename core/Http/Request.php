@@ -4,11 +4,11 @@ namespace Hakkit\Core\Http;
 
 class Request
 {
-	protected ?Map<string, mixed> $request;
-	protected ?Map<string, mixed> $query;
-	protected ?Map<string, mixed> $files;
-	protected ?Map<string, mixed> $cookies;
-	protected ?Map<string, mixed> $server;
+	protected Map<string, mixed> $request;
+	protected Map<string, mixed> $query;
+	protected Map<string, mixed> $files;
+	protected Map<string, mixed> $cookies;
+	protected Map<string, mixed> $server;
 
  	final private function __construct(
  		Map<string, mixed> $request,
@@ -24,14 +24,19 @@ class Request
  		$this->server = $server;
  	}
 
-	public static function constructFromGlobals() : Request 
-	{
+	public static function constructFromGlobals(
+		array<string, mixed> $request,
+		array<string, mixed> $query,
+		array<string, mixed> $files,
+		array<string, mixed> $cookies,
+		array<string, mixed> $server
+	) : Request {
 		return new self(
-			new Map($_POST),
-			new Map($_GET),
-			new Map($_FILES),
-			new Map($_COOKIE),
-			new Map($_SERVER)
+			new Map($request),
+			new Map($query),
+			new Map($files),
+			new Map($cookies),
+			new Map($server)
 		);
 	}
 

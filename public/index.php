@@ -15,7 +15,7 @@ function main() : void
 	);
 	
 	echo $app->handle(
-		Request::constructFromGlobals()
+		Request::constructFromGlobals($_POST, $_GET, $_FILES, $_COOKIE, $_SERVER)
 	);
 }
 

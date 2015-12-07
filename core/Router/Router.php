@@ -9,7 +9,7 @@ final class Router
 
 	public function __construct(array<string, array<string, string>> $routes)
 	{
-		$this->routes = new Map();
+		$this->routes = new Map(null);
 
 		foreach($routes as $path => $options)
 		{
